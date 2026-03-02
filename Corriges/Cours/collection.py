@@ -180,6 +180,10 @@ berti = {
 
 print(berti)
 
+# Une autre facon de créer un dico
+dico_sup = dict(valeur=0, num=4)
+print(dico_sup)
+
 # Accéder à la valeur rattaché à la clé Nom (erreur si la clé n'existe pas)
 print(berti['Nom'])
 # Rectourne None si la clé n'existe pas
