@@ -32,8 +32,9 @@
 # (E) Enregistrement
 # (Q) Quitter
 
-import os
 import re
+import os
+import subprocess
 
 FICHIER = "/utilisateurs.txt"
 CHEMIN = os.path.dirname(__file__)
@@ -133,8 +134,8 @@ def quitter():
     raise SystemExit
 
 def clear():
-    if os.name == "nt": os.system('cls') 
-    else: os.system('clear') 
+    cmd = "cls" if os.name == "nt" else "clear"
+    subprocess.run(cmd, shell=True)
 
 def main():
     clear()
@@ -194,7 +195,7 @@ def main():
 
         if reponse not in dicoMenu.keys(): 
             print("Veuillez saisir un choix du menu.")
-        else : 
+        else: 
             eval("dicoMenu.get(reponse, "")[1]()")
         ligne()
     
